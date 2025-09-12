@@ -1,3 +1,18 @@
+.certifications-list .certification-item:last-child .company-logo {
+  width: 32px !important;
+  height: 24px !important;
+  margin-top: 4px !important;
+}
+.certifications-list .company-logo[src*="sap-logo.png"] {
+  margin-top: 6px;
+}
+.certifications-list .ms-logo {
+  width: 29px !important;
+  height: 29px !important;
+}
+.certifications-list .wipro-logo {
+  margin-left: -8px !important;
+}
 /* Global Colors */
 :root {
   --main-bg: #121212;         /* Dark base background */
@@ -76,6 +91,108 @@ nav ul li a:hover {
   font-size: 1.5rem;
   margin: 10px 0;
   color: var(--highlight);
+}
+
+  /* Certifications Section */
+
+/* Certifications Section */
+.certifications {
+  padding: 40px 20px;
+  background: var(--main-bg);
+  text-align: center;
+}
+
+.certifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.certification-logo-box {
+  width: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.certifications-list .certification-item:last-child .certification-logo-box {
+  align-items: center;
+}
+.certifications-list .certification-item:last-child .company-logo {
+  margin-top: 0 !important;
+}
+}
+}
+}
+
+.certifications-list .company-logo {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  margin-right: 0;
+  display: block;
+}
+
+.certifications .experience-card {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.certifications h2 {
+  color: var(--highlight);
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+
+.certifications-list {
+  list-style: disc inside;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+}
+
+.certifications .experience-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: flex-start;
+}
+
+.certifications .experience-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(138, 43, 226, 0.3);
+}
+
+.certifications-list {
+  max-width: 800px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+  color: var(--highlight);
+  font-weight: bold;
 }
 
 .hero-left p {
@@ -227,6 +344,7 @@ nav ul li a:hover {
 }
 
 /* Experience Section */
+
 .experience {
   padding: 40px 20px;
   background: var(--section-bg);
