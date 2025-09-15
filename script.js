@@ -1,3 +1,4 @@
+/* ========= Projects data ========= */
 const projects = [
   {
     title: 'Release Management Architecture',
@@ -29,52 +30,53 @@ const projects = [
   }
 ];
 
+/* ========= Init ========= */
 document.addEventListener('DOMContentLoaded', () => {
+  // build project cards
   const grid = document.getElementById('projectGrid');
-  if (!grid) return;
-
-  projects.forEach(project => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `<h3>${project.title}</h3>`;
-    card.addEventListener('click', () => openModal(project.title, project.image, project.desc));
-    grid.appendChild(card);
-  });
-
-  // Close on overlay click
-  const modal = document.getElementById('modal');
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
+  if (grid) {
+    projects.forEach(project => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `<h3>${project.title}</h3>`;
+      card.addEventListener('click', () =>
+        openModal(project.title, project.image, project.desc)
+      );
+      grid.appendChild(card);
     });
   }
 
-  // Close on Esc
+  // overlay click to close (projects modal)
+  const modal = document.getElementById('modal');
+  if (modal) {
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  }
+
+  // overlay click to close (cert modal)
+  const certModal = document.getElementById('certModal');
+  if (certModal) {
+    certModal.addEventListener('click', (e) => { if (e.target === certModal) closeCertModal(); });
+  }
+
+  // Esc closes whichever modal is open
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape') { closeModal(); closeCertModal(); }
   });
 });
 
+/* ========= Project Modal helpers ========= */
 function openModal(title, imageUrl, desc) {
-  const modal = document.getElementById('modal');
-  const imgEl = document.getElementById('modal-image');
-  const titleEl = document.getElementById('modal-title');
+  const modal  = document.getElementById('modal');
+  const imgEl  = document.getElementById('modal-image');
+  const titleEl= document.getElementById('modal-title');
   const descEl = document.getElementById('modal-desc');
+  if (!modal || !imgEl || !titleEl || !descEl) return;
 
-  if (!modal || !imgEl || !titleEl || !descEl) {
-    console.error('Modal elements missing in DOM.');
-    return;
-  }
-
-  // Set content
   titleEl.textContent = title;
   imgEl.src = imageUrl;
   imgEl.alt = title;
-
-  // Keep the bullets and line breaks
   descEl.textContent = desc;
 
-  // Show
   modal.style.display = 'flex';
 }
 
@@ -82,13 +84,36 @@ function closeModal() {
   const modal = document.getElementById('modal');
   if (modal) modal.style.display = 'none';
 }
-// Close on overlay click
-document.addEventListener('click', (e) => {
-  const modal = document.getElementById('modal');
-  if (modal && e.target === modal) closeModal();
-});
 
-// Close on ESC
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
-});
+/* ========= Certification Modal (supports PDF or image) ========= */
+function openCertModal(title, url) {
+  const modal   = document.getElementById('certModal');
+  const titleEl = document.getElementById('cert-modal-title');
+  const imgEl   = document.getElementById('cert-img');
+  const pdfEl   = document.getElementById('cert-pdf');
+  const dlEl    = document.getElementById('cert-download'); // may not exist if hidden/removed
+
+  if (!modal || !titleEl || !imgEl || !pdfEl) return;
+
+  titleEl.textContent = title;
+  if (dlEl) dlEl.href = url; // safe even if the button is removed
+
+  const isPdf = /\.pdf(\?.*)?$/i.test(url);
+
+  if (isPdf) {
+    pdfEl.src = url;
+    pdfEl.style.display = 'block';
+    imgEl.style.display = 'none';
+  } else {
+    imgEl.src = url;
+    imgEl.style.display = 'block';
+    pdfEl.style.display = 'none';
+  }
+
+  modal.style.display = 'flex';
+}
+
+function closeCertModal() {
+  const modal = document.getElementById('certModal');
+  if (modal) modal.style.display = 'none';
+}

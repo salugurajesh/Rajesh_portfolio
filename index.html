@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,34 +7,53 @@
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-<!-- ===== Modal (add before </body>) ===== -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <button class="modal-close" aria-label="Close" onclick="closeModal()">×</button>
-    <h3 id="modal-title"></h3>
-    <img id="modal-image" alt="Project image" />
-    <p id="modal-desc" class="modal-desc"></p>
-  </div>
-</div>
-
 
 <body>
   <nav>
     <div class="logo">Salugu Rajesh</div>
     <ul>
-  <li><a href="#projects">Projects</a></li>
-  <li><a href="#skills">Skills</a></li>
-  <li><a href="#experience">Experience</a></li>
-  <li><a href="#certifications">Certifications</a></li>
-  <li><a href="#about">About</a></li>
-  <li><a href="#contact">Contact</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
+  <!-- ===== Project Modal (My Work) ===== -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close" onclick="closeModal()">×</button>
+      <h3 id="modal-title"></h3>
+      <img id="modal-image" alt="Project image" />
+      <p id="modal-desc" class="modal-desc"></p>
+    </div>
+  </div>
+
+  <!-- ===== Certifications Modal ===== -->
+  <div id="certModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Close" onclick="closeCertModal()">×</button>
+      <h3 id="cert-modal-title"></h3>
+
+      <!-- Container that can show either image or PDF -->
+      <div id="cert-media">
+        <img id="cert-img" alt="Certification image" style="display:none;" />
+        <embed id="cert-pdf" type="application/pdf" style="display:none;" />
+      </div>
+
+      <!-- OPTIONAL download button (kept out so the UI stays clean)
+      <a id="cert-download" class="download-btn" href="#" target="_blank" rel="noopener">
+        Open full certificate
+      </a> -->
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="hero-left">
       <div class="social-icons">
@@ -45,7 +63,11 @@
       </div>
       <h2>Hi, I'm <span class="highlight">Salugu Rajesh.</span></h2>
       <h3>I'm a <span class="highlight">SAP Basis & Java Developer</span></h3>
-      <p>SAP Basis Administrator with 3+ years of experience in release management and cloud-hosted SAP landscapes (OracleDB). Certified in Power BI and Azure for SAP Workloads. Experienced in full-stack development with Spring Boot and Angular. Skilled at optimizing deployments, automating processes, and delivering zero-defect go-lives.</p>
+      <p>
+        SAP Basis Administrator with 3+ years of experience in release management and cloud-hosted SAP landscapes (OracleDB).
+        Certified in Power BI and Azure for SAP Workloads. Experienced in full-stack development with Spring Boot and Angular.
+        Skilled at optimizing deployments, automating processes, and delivering zero-defect go-lives.
+      </p>
       <div class="hero-buttons">
         <a href="#projects">View My Work</a>
         <a href="#contact">Contact Me</a>
@@ -57,12 +79,13 @@
     </div>
   </section>
 
+  <!-- ===== PROJECTS ===== -->
   <section id="projects" class="projects">
     <h2>My Work</h2>
     <div class="project-grid" id="projectGrid"></div>
   </section>
 
-
+  <!-- ===== SKILLS ===== -->
   <div class="skills-section-wrapper">
     <section id="skills" class="skills">
       <h2>Skills & Tools</h2>
@@ -82,12 +105,12 @@
     </section>
   </div>
 
+  <!-- ===== EXPERIENCE ===== -->
   <section id="experience" class="experience">
     <h2>Experience</h2>
     <div class="experience-card">
       <div>
-        <h3><img src="TCS_wordmark_2020.webp"
-           alt="TCS Logo" class="company-logo">Tata Consultancy Services – SAP Junior Basis Administrator</h3>
+        <h3><img src="TCS_wordmark_2020.webp" alt="TCS Logo" class="company-logo">Tata Consultancy Services – SAP Junior Basis Administrator</h3>
         <p>
           - Managed and migrated changes from Jira tickets to multiple systems using SAP tools and ChaRM.<br>
           - Conducted go-lives by deploying changes to production environments.<br>
@@ -100,10 +123,9 @@
       </div>
     </div>
 
-    <div class="experience-card"> 
+    <div class="experience-card">
       <div>
-        <h3><img src="Wipro_Primary_Logo_Color_RGB.svg.webp" 
-           alt="Wipro Logo" class="company-logo">Wipro – Java Full Stack Trainee</h3>
+        <h3><img src="Wipro_Primary_Logo_Color_RGB.svg.webp" alt="Wipro Logo" class="company-logo">Wipro – Java Full Stack Trainee</h3>
         <p>
           - Developed the frontend using Angular with modular UI components.<br>
           - Built backend services using Spring Boot and MongoDB.<br>
@@ -114,44 +136,74 @@
     </div>
   </section>
 
+  <!-- ===== CERTIFICATIONS ===== -->
   <section id="certifications" class="certifications">
     <h2>Certifications</h2>
     <div class="experience-card">
       <div class="certifications-list">
-        <div class="certification-item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" class="company-logo ms-logo">
+        <!-- PL-300 -->
+        <div class="certification-item"
+             onclick="openCertModal(
+               'PL-300: Microsoft Power BI Data Analyst – Microsoft',
+               'assets/certifications/PL-300_PowerBI_Certification.pdf'
+             )">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+               alt="Microsoft Logo" class="company-logo">
           <strong>PL-300:</strong> Microsoft Power BI Data Analyst – Microsoft
         </div>
-        <div class="certification-item">
-          <img src="https://images.netcomlearning.com/cms/logos/microsoft-az-120.png" alt="Microsoft Logo" class="company-logo">
+
+        <!-- AZ-120 -->
+        <div class="certification-item"
+             onclick="openCertModal(
+               'AZ-120: Planning and Administering Microsoft Azure for SAP Workloads – Microsoft',
+               'assets/certifications/AZ-120_SAP_Certification.pdf'
+             )">
+          <img src="https://images.netcomlearning.com/cms/logos/microsoft-az-120.png"
+               alt="Microsoft AZ-120 Logo" class="company-logo">
           <strong>AZ-120:</strong> Planning and Administering Microsoft Azure for SAP Workloads – Microsoft
         </div>
-        <div class="certification-item">
-          <img src="Wipro_Primary_Logo_Color_RGB.svg.webp" alt="Wipro Logo" class="company-logo wipro-logo">
-          <strong>Certificate Program in Java Full Stack</strong>– Wipro
-        </div>
-        <div class="certification-item">
-          <img src="https://certificationrecommend.sapforgrowth.com/assets/images/sap-logo.png" alt="SAP Logo" class="company-logo">
+
+        <!-- SAP Basis -->
+        <div class="certification-item"
+             onclick="openCertModal(
+               'SAP System Administration (SAP BASIS, NetWeaver 7.5) – OpenSAP',
+               'assets/certifications/Sap_Basis_Certificate.pdf'
+             )">
+          <img src="https://certificationrecommend.sapforgrowth.com/assets/images/sap-logo.png"
+               alt="SAP Logo" class="company-logo">
           <strong>SAP System Administration (SAP BASIS, NetWeaver 7.5)</strong> – OpenSAP
+        </div>
+
+        <!-- Java Full Stack -->
+        <div class="certification-item"
+             onclick="openCertModal(
+               'Certificate Program in Java Full Stack – Wipro',
+               'assets/certifications/Wipro_javaFullStack_certification.pdf'
+             )">
+          <img src="Wipro_Primary_Logo_Color_RGB.svg.webp"
+               alt="Wipro Logo" class="company-logo wipro-logo">
+          <strong>Certificate Program in Java Full Stack</strong> – Wipro
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ===== ABOUT & CONTACT ===== -->
   <section id="about" class="about-contact-wrapper">
     <div class="about-section">
       <h2>About Me</h2>
       <p>
-        I am Salugu Rajesh, a software engineer with over 3 years of experience 
-        in SAP Basis administration, Java full-stack development, and release management. 
+        I am Salugu Rajesh, a software engineer with over 3 years of experience
+        in SAP Basis administration, Java full-stack development, and release management.
         I am passionate about building scalable, reliable, and efficient software solutions.
       </p>
     </div>
-    
+
     <div class="contact-section" id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:rajeshsalugu0206@gmail.com">rajeshsalugu0206@gmail.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/salugu-rajesh/" target="_blank">Salugu Rajesh</a></p>
+      <p>Phone: <a href="tel:+918332939478">+91 83329 39478</a></p>
       <div class="contact-icons">
         <a href="mailto:rajeshsalugu0206@gmail.com"><i class="fas fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/salugu-rajesh/" target="_blank"><i class="fab fa-linkedin"></i></a>
