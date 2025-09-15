@@ -153,7 +153,7 @@ nav a:hover{color:#fff}
   transition: background 0.3s, color 0.3s;
 }
 .certification-item:hover {
-  background: rgba(138, 43, 226, 0.15); /* subtle purple glow */
+  background: rgba(138, 43, 226, 0.15); /* subtle -purple glow */
   color: var(--highlight); /* text highlight */
 }
 

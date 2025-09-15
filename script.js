@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* ========= Project Modal helpers ========= */
+/* ========= Project -Modal helpers ========= */
 function openModal(title, imageUrl, desc) {
   const modal  = document.getElementById('modal');
   const imgEl  = document.getElementById('modal-image');
