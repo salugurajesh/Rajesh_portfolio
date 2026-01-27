@@ -24,7 +24,9 @@ const projects = [
   {
     title: 'SAP Basis Training & Administration',
     image: 'sap_wipro.png',
-   
+    desc: `• Real-time weather data integration via external APIs.
+• Secure user authentication with SQL database.
+• User data management using MongoDB.`
   }
 ];
 
