@@ -22,11 +22,10 @@ const projects = [
 • Analyzed trends and optimized resources using historical + real-time data.`
   },
   {
-    title: 'Full Stack Weather Application',
-    image: 'https://i.ibb.co/wNDfjr7Q/Weather-App-Interface-Screenshots.png',
-    desc: `• Angular front-end + Spring Boot back-end.
-• Real-time weather data via API.
-• MongoDB for user data; SQL for authentication.`
+    title: 'SAP Basis Training & Administration',
+    image: 'sap_wipro.png',
+
+  
   }
 ];
 
