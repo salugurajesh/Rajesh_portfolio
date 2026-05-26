@@ -3,27 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
-  <!-- UPDATED TITLE -->
-  <title>Salugu Rajesh | SAP Basis Engineer | SAP on Azure</title>
+  <title>Salugu Rajesh | SAP Basis & Java Developer</title>
 
-  <!-- FontAwesome -->
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-  <!-- CSS -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-  <!-- NAVBAR -->
   <nav>
     <div class="logo">Salugu Rajesh</div>
-
     <ul>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#highlights">Highlights</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#about">About</a></li>
@@ -31,372 +24,199 @@
     </ul>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- ===== Project Modal (My Work) ===== -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close" onclick="closeModal()">×</button>
+      <h3 id="modal-title"></h3>
+      <img id="modal-image" alt="Project image" />
+      <p id="modal-desc" class="modal-desc"></p>
+    </div>
+  </div>
+
+  <!-- ===== Certifications Modal ===== -->
+  <div id="certModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Close" onclick="closeCertModal()">×</button>
+      <h3 id="cert-modal-title"></h3>
+
+      <!-- Container that can show either image or PDF -->
+      <div id="cert-media">
+        <img id="cert-img" alt="Certification image" style="display:none;" />
+        <embed id="cert-pdf" type="application/pdf" style="display:none;" />
+      </div>
+
+      <!-- OPTIONAL download button (kept out so the UI stays clean)
+      <a id="cert-download" class="download-btn" href="#" target="_blank" rel="noopener">
+        Open full certificate
+      </a> -->
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
   <section class="hero">
-
     <div class="hero-left">
-
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/salugu-rajesh/" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-
-        <a href="https://github.com/salugurajesh" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-
-        <a href="mailto:rajeshsalugu0206@gmail.com">
-          <i class="fas fa-envelope"></i>
-        </a>
+        <a href="https://www.linkedin.com/in/salugu-rajesh/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/salugurajesh" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:rajeshsalugu0206@gmail.com"><i class="fas fa-envelope"></i></a>
       </div>
-
-      <!-- UPDATED -->
-      <h2>
-        Hi, I'm <span class="highlight">Salugu Rajesh</span>
-      </h2>
-
-      <!-- UPDATED -->
-      <h3>
-        I'm a 
-        <span class="highlight">
-          SAP Basis Engineer & Cloud Operations Specialist
-        </span>
-      </h3>
-
-      <!-- UPDATED -->
+      <h2>Hi, I'm <span class="highlight">Salugu Rajesh.</span></h2>
+      <h3>I'm a <span class="highlight">SAP Basis & Java Developer</span></h3>
       <p>
-        SAP Basis Administrator with 3+ years of experience in SAP S/4HANA,
-        release management, transport management, ChaRM workflows,
-        kernel upgrades, system refreshes, and Azure-hosted SAP landscapes.
-
-        Skilled in production deployments, troubleshooting,
-        operational support, and maintaining stable enterprise SAP environments.
-
-        Certified in Microsoft Azure for SAP Workloads (AZ-120)
-        with strong interest in cloud operations and DevOps.
+        SAP Basis Administrator with 3+ years of experience in release management and cloud-hosted SAP landscapes (OracleDB).
+        Certified in Power BI and Azure for SAP Workloads. Experienced in full-stack development with Spring Boot and Angular.
+        Skilled at optimizing deployments, automating processes, and delivering zero-defect go-lives.
       </p>
-
       <div class="hero-buttons">
-
-        <a href="#projects">
-          View My Work
-        </a>
-
-        <a href="#contact">
-          Contact Me
-        </a>
-
-        <a href="RAJESH_RESUME (14).pdf"
-           download="Salugu_Rajesh_Resume.pdf">
-          Download Resume
-        </a>
-
+        <a href="#projects">View My Work</a>
+        <a href="#contact">Contact Me</a>
+        <a href="RAJESH_RESUME (14).pdf" download="Salugu_Rajesh_Resume.pdf">Download CV</a>
       </div>
     </div>
-
     <div>
-      <img
-        src="https://i.ibb.co/wNpJvhns/IMG-9125.jpg"
-        alt="Salugu Rajesh Profile"
-      >
+      <img src="https://i.ibb.co/wNpJvhns/IMG-9125.jpg" alt="Salugu Rajesh Profile">
     </div>
-
   </section>
 
-  <!-- PROJECTS -->
+  <!-- ===== PROJECTS ===== -->
   <section id="projects" class="projects">
-
-    <!-- UPDATED -->
-    <h2>Enterprise Projects</h2>
-
+    <h2>My Work</h2>
     <div class="project-grid" id="projectGrid"></div>
-
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="skills">
-
-    <h2>Skills & Tools</h2>
-
-    <div class="skills-grid">
-
-      <div class="skill-box">
-        <i class="fas fa-cogs" style="color:#FF6F00;"></i>
-        SAP Basis
+  <!-- ===== SKILLS ===== -->
+  <div class="skills-section-wrapper">
+    <section id="skills" class="skills">
+      <h2>Skills & Tools</h2>
+      <div class="skills-grid">
+        <div class="skill-box"><i class="fas fa-desktop" style="color:#0A66C2;"></i> SAP GUI</div>
+        <div class="skill-box"><i class="fas fa-magic" style="color:#A020F0;"></i> Charm</div>
+        <div class="skill-box"><i class="fas fa-cogs" style="color:#FF6F00;"></i> SAP Basis</div>
+        <div class="skill-box"><i class="fab fa-java" style="color:#007396;"></i> Java</div>
+        <div class="skill-box"><i class="fas fa-leaf" style="color:#6DB33F;"></i> Spring Boot</div>
+        <div class="skill-box"><i class="fab fa-angular" style="color:#DD0031;"></i> Angular</div>
+        <div class="skill-box"><i class="fas fa-code" style="color:#3178C6;"></i> TypeScript</div>
+        <div class="skill-box"><i class="fab fa-html5" style="color:#E34F26;"></i> HTML & CSS</div>
+        <div class="skill-box"><i class="fab fa-js" style="color:#F7DF1E;"></i> JavaScript</div>
+        <div class="skill-box"><i class="fas fa-database" style="color:#4DB33D;"></i> SQL & MongoDB</div>
+        <div class="skill-box"><i class="fab fa-github" style="color:#181717;"></i> Git & GitHub</div>
       </div>
+    </section>
+  </div>
 
-      <div class="skill-box">
-        <i class="fas fa-server" style="color:#FF8C00;"></i>
-        SAP S/4HANA
-      </div>
-
-      <div class="skill-box">
-        <i class="fas fa-random" style="color:#6A5ACD;"></i>
-        STMS & ChaRM
-      </div>
-
-      <div class="skill-box">
-        <i class="fas fa-cloud" style="color:#0078D4;"></i>
-        Microsoft Azure
-      </div>
-
-      <div class="skill-box">
-        <i class="fas fa-database" style="color:#4DB33D;"></i>
-        Oracle DB
-      </div>
-
-      <div class="skill-box">
-        <i class="fas fa-sync-alt" style="color:#00A86B;"></i>
-        System Refresh
-      </div>
-
-      <div class="skill-box">
-        <i class="fas fa-tools" style="color:#B22222;"></i>
-        Kernel Upgrades
-      </div>
-
-      <div class="skill-box">
-        <i class="fas fa-network-wired" style="color:#008080;"></i>
-        SAP Transport Management
-      </div>
-
-      <div class="skill-box">
-        <i class="fab fa-docker" style="color:#2496ED;"></i>
-        Docker
-      </div>
-
-      <div class="skill-box">
-        <i class="fab fa-github" style="color:#181717;"></i>
-        Git & GitHub
-      </div>
-
-      <div class="skill-box">
-        <i class="fas fa-code" style="color:#F05032;"></i>
-        REST APIs
-      </div>
-
-      <div class="skill-box">
-        <i class="fas fa-chart-line" style="color:#E97627;"></i>
-        Power BI
-      </div>
-
-    </div>
-  </section>
-
-  <!-- NEW HIGHLIGHTS SECTION -->
-  <section id="highlights" class="highlights">
-
-    <h2>Key Highlights</h2>
-
-    <div class="highlights-grid">
-
-      <div class="highlight-card">
-        <h3>20+ Major Releases</h3>
-        <p>
-          Successfully executed enterprise SAP production releases
-          without Sev-1 incidents.
-        </p>
-      </div>
-
-      <div class="highlight-card">
-        <h3>200+ Monthly Transports</h3>
-        <p>
-          Managed large-scale transport activities
-          with strong SLA compliance.
-        </p>
-      </div>
-
-      <div class="highlight-card">
-        <h3>Azure Certified</h3>
-        <p>
-          Certified in Microsoft Azure for SAP Workloads (AZ-120).
-        </p>
-      </div>
-
-      <div class="highlight-card">
-        <h3>SAP S/4HANA Experience</h3>
-        <p>
-          Hands-on experience managing enterprise SAP landscapes.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- EXPERIENCE -->
+  <!-- ===== EXPERIENCE ===== -->
   <section id="experience" class="experience">
-
     <h2>Experience</h2>
-
-    <!-- TCS -->
     <div class="experience-card">
-
       <div>
-
-        <!-- UPDATED -->
-        <h3>
-          <img src="TCS_wordmark_2020.webp"
-               alt="TCS Logo"
-               class="company-logo">
-
-          Tata Consultancy Services – SAP Basis Administrator
-        </h3>
-
+        <h3><img src="TCS_wordmark_2020.webp" alt="TCS Logo" class="company-logo">Tata Consultancy Services – SAP Junior Basis Administrator</h3>
         <p>
-          - Managed transport and release activities using STMS and ChaRM.<br>
-
-          - Executed production deployments and coordinated go-live activities.<br>
-
-          - Supported SAP S/4HANA environments hosted on Azure infrastructure.<br>
-
-          - Performed kernel upgrades, system refreshes, and troubleshooting activities.<br>
-
-          - Managed more than 200 monthly transport requests with strong SLA compliance.<br>
-
-          - Improved operational stability through proactive monitoring and issue resolution.<br>
-
-          - Collaborated with infrastructure, database, and functional teams during releases.
+          - Managed and migrated changes from Jira tickets to multiple systems using SAP tools and ChaRM.<br>
+          - Conducted go-lives by deploying changes to production environments.<br>
+          - Performed in-depth analysis of OT issues for smooth operations.<br>
+          - Applied PLA descriptions and GEX for streamlined operations.<br>
+          - Coordinated client openings, R/3 connections, and led release cycles.<br>
+          - Handled 200+ monthly transport requests with 100% SLA compliance.<br>
+          - Improved system stability by resolving 95% of OT issues within deadlines.
         </p>
-
       </div>
-
     </div>
 
-    <!-- WIPRO -->
     <div class="experience-card">
-
       <div>
-
-        <!-- UPDATED -->
-        <h3>
-          <img src="Wipro_Primary_Logo_Color_RGB.svg.webp"
-               alt="Wipro Logo"
-               class="company-logo">
-
-          Wipro – Technical Trainee
-        </h3>
-
+        <h3><img src="Wipro_Primary_Logo_Color_RGB.svg.webp" alt="Wipro Logo" class="company-logo">Wipro – Java Full Stack Trainee</h3>
         <p>
-          - Assisted in SAP Basis administration and monitoring activities.<br>
-
-          - Supported transport management and system operations.<br>
-
-          - Gained exposure to Java full-stack development and REST APIs.<br>
-
-          - Worked on basic frontend and backend application development.
+          - Developed the frontend using Angular with modular UI components.<br>
+          - Built backend services using Spring Boot and MongoDB.<br>
+          - Used MySQL Workbench 8.0 CE for authentication and user data.<br>
+          - Designed a full-stack weather application.
         </p>
-
       </div>
-
     </div>
-
   </section>
 
-  <!-- CERTIFICATIONS -->
+  <!-- ===== --CERTIFICATIONS ===== -->
   <section id="certifications" class="certifications">
-
     <h2>Certifications</h2>
-
     <div class="experience-card">
-
       <div class="certifications-list">
-
-        <div class="certification-item">
-          <strong>AZ-120:</strong>
-          Planning and Administering Microsoft Azure for SAP Workloads
+        <!-- PL-300 -->
+        <div class="certification-item"
+             onclick="openCertModal(
+               'PL-300: Microsoft Power BI Data Analyst – Microsoft',
+               'assets/certifications/PL-300_PowerBI_Certification.pdf'
+             )">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+               alt="Microsoft Logo" class="company-logo">
+          <strong>PL-300:</strong> Microsoft Power BI Data Analyst – Microsoft
         </div>
 
-        <div class="certification-item">
-          <strong>PL-300:</strong>
-          Microsoft Power BI Data Analyst
+        <!-- AZ-120 -->
+        <div class="certification-item"
+             onclick="openCertModal(
+               'AZ-120: Planning and Administering Microsoft Azure for SAP Workloads – Microsoft',
+               'assets/certifications/AZ-120_SAP_Certification.pdf'
+             )">
+          <img src="https://images.netcomlearning.com/cms/logos/microsoft-az-120.png"
+               alt="Microsoft AZ-120 Logo" class="company-logo">
+          <strong>AZ-120:</strong> Planning and Administering Microsoft Azure for SAP Workloads – Microsoft
         </div>
 
-        <div class="certification-item">
-          <strong>SAP BASIS:</strong>
-          SAP System Administration (NetWeaver 7.5)
+        <!-- SAP Basis -->
+        <div class="certification-item"
+             onclick="openCertModal(
+               'SAP System Administration (SAP BASIS, NetWeaver 7.5) – OpenSAP',
+               'assets/certifications/Sap_Basis_Certificate.pdf'
+             )">
+          <img src="https://certificationrecommend.sapforgrowth.com/assets/images/sap-logo.png"
+               alt="SAP Logo" class="company-logo">
+          <strong>SAP System Administration (SAP BASIS, NetWeaver 7.5)</strong> – OpenSAP
         </div>
 
+        <!-- Java Full Stack -->
+        <div class="certification-item"
+             onclick="openCertModal(
+               'Certificate Program in Java Full Stack – Wipro',
+               'assets/certifications/Wipro_javaFullStack_certification.pdf'
+             )">
+          <img src="Wipro_Primary_Logo_Color_RGB.svg.webp"
+               alt="Wipro Logo" class="company-logo wipro-logo">
+          <strong>Certificate Program in Java Full Stack</strong> – Wipro
+        </div>
       </div>
-
     </div>
-
   </section>
 
-  <!-- ABOUT + CONTACT -->
+  <!-- ===== ABOUT & CONTACT ===== -->
   <section id="about" class="about-contact-wrapper">
-
-    <!-- ABOUT -->
     <div class="about-section">
-
       <h2>About Me</h2>
-
-      <!-- UPDATED -->
       <p>
-        I am an SAP Basis Administrator with experience in SAP S/4HANA operations,
-        release management, ChaRM workflows, transport management,
-        and Azure-hosted SAP environments.
-
-        I specialize in maintaining stable enterprise landscapes,
-        optimizing deployment activities,
-        and supporting large-scale SAP production systems.
+        I am Salugu Rajesh, a software engineer with over 3 years of experience
+        in SAP Basis administration, Java full-stack development, and release management.
+        I am passionate about building scalable, reliable, and efficient software solutions.
       </p>
-
     </div>
 
-    <!-- CONTACT -->
     <div class="contact-section" id="contact">
-
       <h2>Contact</h2>
-
-      <p>
-        Email:
-        <a href="mailto:rajeshsalugu0206@gmail.com">
-          rajeshsalugu0206@gmail.com
-        </a>
-      </p>
-
-      <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/salugu-rajesh/" target="_blank">
-          Salugu Rajesh
-        </a>
-      </p>
-
-      <p>
-        Phone:
-        <a href="tel:+918332939478">
-          +91 83329 39478
-        </a>
-      </p>
-
+      <p>Email: <a href="mailto:rajeshsalugu0206@gmail.com">rajeshsalugu0206@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/salugu-rajesh/" target="_blank">Salugu Rajesh</a></p>
+      <p>Phone: <a href="tel:+918332939478">+91 83329 39478</a></p>
       <div class="contact-icons">
-
-        <a href="mailto:rajeshsalugu0206@gmail.com">
-          <i class="fas fa-envelope"></i>
-        </a>
-
-        <a href="https://www.linkedin.com/in/salugu-rajesh/" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-
-        <a href="https://github.com/salugurajesh" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-
+        <a href="mailto:rajeshsalugu0206@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/salugu-rajesh/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/salugurajesh" target="_blank"><i class="fab fa-github"></i></a>
       </div>
-
     </div>
-
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 Salugu Rajesh</p>
+    <p>&copy; 2025 Salugu Rajesh</p>
   </footer>
 
-  <!-- JS -->
+  <!-- Custom JS -->
   <script src="script.js"></script>
-
 </body>
 </html>
