@@ -374,3 +374,255 @@ footer{
   line-height: 1.9;
   margin-top: 15px;
 }
+/* =========================================
+   PREMIUM 3D / MODERN EFFECTS
+========================================= */
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* ===== HERO GLOW ===== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(238,69,64,.16), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(128,19,54,.22), transparent 35%);
+
+  animation:heroGlow 8s ease-in-out infinite alternate;
+
+  z-index:0;
+}
+
+.hero > *{
+  position:relative;
+  z-index:1;
+}
+
+@keyframes heroGlow{
+
+  from{
+    transform:translateY(0px);
+  }
+
+  to{
+    transform:translateY(-25px);
+  }
+}
+
+/* ===== FLOATING PROFILE ===== */
+
+.profile-slider{
+  animation:floatCard 5s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+
+  0%,100%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+}
+
+/* ===== PREMIUM CARDS ===== */
+
+.card{
+  backdrop-filter:blur(14px);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(81,10,50,.92),
+      rgba(40,10,32,.88)
+    );
+
+  transform-style:preserve-3d;
+
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease,
+    border-color .45s ease;
+}
+
+.card:hover{
+
+  transform:
+    perspective(1000px)
+    rotateX(6deg)
+    rotateY(-6deg)
+    translateY(-10px)
+    scale(1.02);
+
+  border-color:rgba(238,69,64,.45);
+
+  box-shadow:
+    0 35px 70px rgba(0,0,0,.42),
+    0 0 30px rgba(238,69,64,.18);
+}
+
+/* ===== CERTIFICATION GLASS EFFECT ===== */
+
+.certification-item{
+
+  backdrop-filter:blur(18px);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.02)
+    );
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.certification-item:hover{
+
+  transform:
+    translateY(-4px)
+    scale(1.01);
+
+  border-color:rgba(238,69,64,.35);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.25),
+    0 0 18px rgba(238,69,64,.14);
+}
+
+/* ===== EXPERIENCE CARDS ===== */
+
+.experience-card{
+
+  backdrop-filter:blur(12px);
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease,
+    border-color .4s ease;
+}
+
+.experience-card:hover{
+
+  transform:
+    perspective(1000px)
+    translateY(-6px);
+
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.3),
+    0 0 24px rgba(238,69,64,.12);
+}
+
+/* ===== BUTTON SHINE EFFECT ===== */
+
+.hero-buttons a{
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-buttons a::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:-50%;
+  left:-120%;
+
+  width:80%;
+  height:220%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,.25),
+      transparent
+    );
+
+  transform:rotate(25deg);
+
+  transition:1s;
+}
+
+.hero-buttons a:hover::before{
+  left:130%;
+}
+
+/* ===== SKILL BOX EFFECT ===== */
+
+.skill-box{
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.skill-box:hover{
+
+  transform:
+    translateY(-6px)
+    scale(1.03);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.22),
+    0 0 20px rgba(238,69,64,.12);
+}
+
+/* ===== NAV PREMIUM ===== */
+
+nav{
+
+  backdrop-filter:blur(14px);
+
+  background:
+    rgba(25,10,30,.72);
+}
+
+/* ===== SCROLL REVEAL ===== */
+
+section{
+
+  animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ===== SOFT GLOW TEXT ===== */
+
+.hero-left h2,
+.hero-left h3,
+.projects h2,
+.skills h2,
+.experience h2,
+.certifications h2{
+
+  text-shadow:
+    0 0 10px rgba(238,69,64,.12);
+}
