@@ -16,6 +16,12 @@ export default function CertModal({ cert, onClose }){
         <div id="cert-media">
           <img id="cert-img" alt="Certification image" style={{ display: isPdf ? 'none' : 'block' }} src={isPdf ? undefined : cert.url} />
           <embed id="cert-pdf" type="application/pdf" style={{ display: isPdf ? 'block' : 'none' }} src={isPdf ? cert.url : undefined} />
+          {isPdf && (
+            <div className="pdf-fallback">
+              <p>If the PDF does not display, you can open it directly here:</p>
+              <a href={cert.url} target="_blank" rel="noreferrer">Open certification document</a>
+            </div>
+          )}
         </div>
       </div>
     </div>

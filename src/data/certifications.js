@@ -1,8 +1,8 @@
 export const certifications = [
   {
     title: 'PL-300: Microsoft Power BI Data Analyst – Microsoft',
-    url: 'assets/certifications/PL-300_PowerBI_Certification.pdf',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg',
+    url: '/assets/certifications/PL-300_PowerBI_Certification.pdf',
+    img: '/assets/certifications/microsoft.png',
     alt: 'Microsoft Logo',
     strongText: 'PL-300:',
     description: ' Microsoft Power BI Data Analyst – Microsoft',
@@ -10,8 +10,8 @@ export const certifications = [
   },
   {
     title: 'AZ-120: Planning and Administering Microsoft Azure for SAP Workloads – Microsoft',
-    url: 'assets/certifications/AZ-120_SAP_Certification.pdf',
-    img: 'https://images.netcomlearning.com/cms/logos/microsoft-az-120.png',
+    url: '/assets/certifications/AZ-120_SAP_Certification.pdf',
+    img: '/assets/certifications/microsoft.png',
     alt: 'Microsoft AZ-120 Logo',
     strongText: 'AZ-120:',
     description: ' Planning and Administering Microsoft Azure for SAP Workloads – Microsoft',
