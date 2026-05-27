@@ -2,7 +2,7 @@ export const certifications = [
   {
     title: 'PL-300: Microsoft Power BI Data Analyst – Microsoft',
     url: '/assets/certifications/PL-300_PowerBI_Certification.pdf',
-    img: '/assets/certifications/microsoft.png',
+    img: '/assets/certifications/Microsoft_Logo.png',
     alt: 'Microsoft Logo',
     strongText: 'PL-300:',
     description: ' Microsoft Power BI Data Analyst – Microsoft',
@@ -11,7 +11,7 @@ export const certifications = [
   {
     title: 'AZ-120: Planning and Administering Microsoft Azure for SAP Workloads – Microsoft',
     url: '/assets/certifications/AZ-120_SAP_Certification.pdf',
-    img: '/assets/certifications/microsoft.png',
+    img: '/assets/certifications/Microsoft_Logo.png',
     alt: 'Microsoft AZ-120 Logo',
     strongText: 'AZ-120:',
     description: ' Planning and Administering Microsoft Azure for SAP Workloads – Microsoft',
@@ -20,7 +20,7 @@ export const certifications = [
   {
     title: 'SAP System Administration (SAP BASIS, NetWeaver 7.5) – OpenSAP',
     url: '/assets/certifications/Sap_Basis_Certificate.pdf',
-    img: '/assets/certifications/opensap.png',
+    img: '/assets/certifications/SAP-Logo.png',
     alt: 'SAP Logo',
     strongText: 'SAP System Administration (SAP BASIS, NetWeaver 7.5)',
     description: ' – OpenSAP',
