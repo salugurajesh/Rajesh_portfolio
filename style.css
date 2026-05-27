@@ -245,7 +245,7 @@ nav a:hover{color:var(--highlight);transform:translateY(-1px)}
 .certification-logo-box{width:48px;min-width:48px;display:flex;align-items:flex-start;justify-content:center;margin-right:4px}
 .certifications-list .company-logo{flex-shrink:0;width:38px;height:38px;object-fit:contain;display:block}
 .certifications-list .ms-logo{width:29px;height:29px}
-.certifications-list .wipro-logo{margin-left:-8px}
+.certifications-list .wipro-logo{margin-left:-0px}
 .certifications-list .certification-item:last-child .certification-logo-box{align-items:center}
 .certifications-list .certification-item:last-child .company-logo{margin-top:0}
 .certifications-list .company-logo[src*="sap-logo.png"]{margin-top:6px}
