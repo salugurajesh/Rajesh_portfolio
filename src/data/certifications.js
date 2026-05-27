@@ -19,8 +19,8 @@ export const certifications = [
   },
   {
     title: 'SAP System Administration (SAP BASIS, NetWeaver 7.5) – OpenSAP',
-    url: 'assets/certifications/Sap_Basis_Certificate.pdf',
-    img: 'https://certificationrecommend.sapforgrowth.com/assets/images/sap-logo.png',
+    url: '/assets/certifications/Sap_Basis_Certificate.pdf',
+    img: '/assets/certifications/opensap.png',
     alt: 'SAP Logo',
     strongText: 'SAP System Administration (SAP BASIS, NetWeaver 7.5)',
     description: ' – OpenSAP',
@@ -28,8 +28,8 @@ export const certifications = [
   },
   {
     title: 'Certificate Program in Java Full Stack – Wipro',
-    url: 'assets/certifications/Wipro_javaFullStack_certification.pdf',
-    img: 'Wipro_Primary_Logo_Color_RGB.svg.webp',
+    url: '/assets/certifications/Wipro_javaFullStack_certification.pdf',
+    img: '/assets/certifications/Wipro_Primary_Logo_Color_RGB.svg.webp',
     alt: 'Wipro Logo',
     strongText: 'Certificate Program in Java Full Stack',
     description: ' – Wipro',
