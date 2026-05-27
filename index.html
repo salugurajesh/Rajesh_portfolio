@@ -11,11 +11,46 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
+  <!-- Portfolio styles -->
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
   <!-- React App Root -->
   <div id="root"></div>
+
+  <!-- Runtime error overlay: shows errors instead of a blank white page -->
+  <script>
+    (function(){
+      function showError(msg, stack){
+        try{
+          if(document.getElementById('__app_error__')) return;
+          var el = document.createElement('div');
+          el.id='__app_error__';
+          el.style.position='fixed';
+          el.style.zIndex=2147483647;
+          el.style.left=0; el.style.top=0; el.style.right=0; el.style.bottom=0;
+          el.style.overflow='auto';
+          el.style.padding='24px';
+          el.style.background='#fff';
+          el.style.color='#000';
+          el.style.fontFamily='monospace,monospace';
+          el.style.whiteSpace='pre-wrap';
+          el.style.boxSizing='border-box';
+          el.innerText = 'Runtime error:\n\n' + (msg || 'Unknown error') + (stack ? '\n\n' + stack : '');
+          document.body.appendChild(el);
+        }catch(e){console.error(e)}
+      }
+      window.addEventListener('error', function(e){
+        var err = e.error || {};
+        showError(err.message || e.message || 'Error', err.stack || (e.filename? e.filename+':'+e.lineno+':'+e.colno : ''));
+      });
+      window.addEventListener('unhandledrejection', function(e){
+        var reason = e.reason || e;
+        showError('Unhandled Promise Rejection: ' + (reason && reason.message ? reason.message : String(reason)), reason && reason.stack ? reason.stack : '');
+      });
+    })();
+  </script>
 
   <!-- Vite React Entry -->
   <script type="module" src="/src/main.jsx"></script>
