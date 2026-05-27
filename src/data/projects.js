@@ -15,14 +15,14 @@ export const projects = [
   },
   {
     title: 'SAP Basis System Monitoring Dashboard',
-    image: '/assets/projects/Sap_Monitoring.png',
+    image: 'https://i.ibb.co/FkTrprGt/Chat-GPT-Image-Jul-23-2025-11-13-58-PM.png',
     desc: `• Monitored system health (CPU, memory, disk) with real-time dashboards (e.g., ST06).
 • Automated job and transport monitoring; proactive issue resolution.
 • Analyzed trends and optimized resources using historical + real-time data.`
   },
   {
     title: 'SAP Basis Training & Administration',
-    image: '/assets/projects/sap_wipro.png',
+    image: 'https://i.ibb.co/nNCPBV8T/sap-wipro.png',
     desc: '• Delivered SAP Basis training and administrative support for production and sandbox landscapes.'
   }
 ]

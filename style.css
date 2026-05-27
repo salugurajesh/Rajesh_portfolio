@@ -638,3 +638,153 @@ section{
   text-shadow:
     0 0 10px rgba(238,69,64,.12);
 }
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px){
+
+  /* ===== NAVBAR ===== */
+
+  nav{
+    padding:14px 20px;
+    flex-wrap:wrap;
+  }
+
+  nav ul{
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:10px;
+  }
+
+  nav ul li a{
+    font-size:.9rem;
+  }
+
+  /* ===== HERO ===== */
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+
+    padding:60px 24px;
+    gap:50px;
+
+    min-height:auto;
+  }
+
+  .hero-left{
+    width:100%;
+  }
+
+  .hero-left h1{
+    font-size:3rem;
+    line-height:1.1;
+  }
+
+  .hero-left h2{
+    font-size:2rem;
+  }
+
+  .hero-left p{
+    font-size:1rem;
+    line-height:1.8;
+  }
+
+  /* ===== BUTTONS ===== */
+
+  .hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  .hero-buttons a{
+    width:100%;
+    max-width:260px;
+    text-align:center;
+  }
+
+  /* ===== HERO IMAGE ===== */
+
+  .profile-slider{
+    width:100%;
+    max-width:340px;
+    height:auto;
+    padding:20px;
+  }
+
+  .profile-slider img{
+    width:220px;
+    height:220px;
+  }
+
+  /* ===== SECTION HEADINGS ===== */
+
+  section h2{
+    font-size:2.4rem;
+  }
+
+  /* ===== PROJECTS ===== */
+
+  .project-grid{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    width:100%;
+  }
+
+  /* ===== EXPERIENCE ===== */
+
+  .experience-card{
+    padding:28px 20px;
+  }
+
+  .experience-card h3{
+    font-size:1.2rem;
+    line-height:1.5;
+    flex-wrap:wrap;
+  }
+
+  .experience-card p{
+    font-size:.96rem;
+    line-height:1.9;
+  }
+
+  /* ===== CERTIFICATIONS ===== */
+
+  .certification-item{
+    flex-direction:column;
+    text-align:center;
+    gap:14px;
+
+    padding:24px 18px;
+  }
+
+  .certification-item strong{
+    display:block;
+  }
+
+  /* ===== CONTACT ===== */
+
+  .contact-container{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  /* ===== FOOTER ===== */
+
+  footer{
+    text-align:center;
+    padding:30px 20px;
+  }
+
+  /* ===== GENERAL ===== */
+
+  body{
+    overflow-x:hidden;
+  }
+
+}
