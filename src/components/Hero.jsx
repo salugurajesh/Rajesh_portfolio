@@ -1,8 +1,14 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 export default function Hero(){
   return (
-    <section className="hero">
+    <motion.section
+      className="hero"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9 }}
+    >
       <div className="hero-left">
         <div className="social-icons">
           <a href="https://www.linkedin.com/in/salugu-rajesh/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i></a>
@@ -25,10 +31,15 @@ export default function Hero(){
         </div>
       </div>
       <div className="profile-slider">
-        <div className="slider-track">
+        <motion.div
+          className="slider-track"
+          initial={{ x: -10 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 4, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+        >
           <img src="https://i.ibb.co/wNpJvhns/IMG-9125.jpg" alt="Salugu Rajesh Profile" />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

@@ -25,6 +25,18 @@ body{
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
 
+/* Mouse-follow glow variables */
+:root{ --x: 50vw; --y: 50vh; }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(400px at var(--x) var(--y), rgba(238,69,64,.15), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 ::selection{background:rgba(238,69,64,.28);color:#fff;}
 
 a{color:inherit}
