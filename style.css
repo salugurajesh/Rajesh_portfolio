@@ -131,7 +131,7 @@ nav a:hover{color:var(--highlight);transform:translateY(-1px)}
   display:flex;
   align-items:center;
 
-  margin-right:250px;
+  margin-right:0;
 
   box-shadow:
     inset 0 0 20px rgba(255,255,255,.04),
@@ -642,149 +642,125 @@ section{
    MOBILE RESPONSIVE DESIGN
 ========================================= */
 
-@media (max-width: 768px){
+@media (max-width:768px){
 
-  /* ===== NAVBAR ===== */
+  body{
+    overflow-x:hidden;
+  }
 
   nav{
-    padding:14px 20px;
-    flex-wrap:wrap;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:18px;
+
+    padding:18px 20px;
   }
 
   nav ul{
-    gap:18px;
+    display:flex;
     flex-wrap:wrap;
+
     justify-content:center;
-    margin-top:10px;
-  }
 
-  nav ul li a{
-    font-size:.9rem;
-  }
+    gap:18px;
 
-  /* ===== HERO ===== */
+    padding:0;
+    margin:0;
+  }
 
   .hero{
+
     flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
     text-align:center;
 
-    padding:60px 24px;
+    width:100%;
+
+    padding:50px 20px;
+
     gap:50px;
 
-    min-height:auto;
+    overflow:hidden;
   }
 
   .hero-left{
     width:100%;
-  }
-
-  .hero-left h1{
-    font-size:3rem;
-    line-height:1.1;
+    max-width:100%;
   }
 
   .hero-left h2{
-    font-size:2rem;
+    font-size:2.2rem;
+    line-height:1.2;
+  }
+
+  .hero-left h3{
+    font-size:1.4rem;
+    line-height:1.4;
   }
 
   .hero-left p{
-    font-size:1rem;
-    line-height:1.8;
+    width:100%;
+    text-align:center;
   }
 
-  /* ===== BUTTONS ===== */
-
   .hero-buttons{
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:14px;
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:16px;
   }
 
   .hero-buttons a{
     width:100%;
     max-width:260px;
-    text-align:center;
   }
-
-  /* ===== HERO IMAGE ===== */
 
   .profile-slider{
+
+    margin-right:0 !important;
+
     width:100%;
-    max-width:340px;
-    height:auto;
-    padding:20px;
+    max-width:320px;
+
+    height:240px;
+
+    justify-content:center;
   }
 
-  .profile-slider img{
-    width:220px;
-    height:220px;
+  .slider-track{
+
+    position:relative;
+
+    left:auto !important;
+
+    animation:none;
+
+    margin:auto;
   }
-
-  /* ===== SECTION HEADINGS ===== */
-
-  section h2{
-    font-size:2.4rem;
-  }
-
-  /* ===== PROJECTS ===== */
 
   .project-grid{
     grid-template-columns:1fr;
   }
 
-  .card{
-    width:100%;
-  }
-
-  /* ===== EXPERIENCE ===== */
-
-  .experience-card{
-    padding:28px 20px;
-  }
-
   .experience-card h3{
-    font-size:1.2rem;
-    line-height:1.5;
-    flex-wrap:wrap;
+    flex-direction:column;
+    text-align:center;
+    gap:12px;
   }
-
-  .experience-card p{
-    font-size:.96rem;
-    line-height:1.9;
-  }
-
-  /* ===== CERTIFICATIONS ===== */
 
   .certification-item{
     flex-direction:column;
     text-align:center;
-    gap:14px;
-
-    padding:24px 18px;
-  }
-
-  .certification-item strong{
-    display:block;
-  }
-
-  /* ===== CONTACT ===== */
-
-  .contact-container{
-    grid-template-columns:1fr;
-    gap:40px;
-  }
-
-  /* ===== FOOTER ===== */
-
-  footer{
-    text-align:center;
-    padding:30px 20px;
-  }
-
-  /* ===== GENERAL ===== */
-
-  body{
-    overflow-x:hidden;
   }
 
 }
